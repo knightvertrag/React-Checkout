@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  @include transition;
+  @include media($screen-phone) {
+    flex-direction: column-reverse;
+  }
+
+  .formContainer {
+    width: 50%;
+    @include transition;
+    @include media($screen-pc) {
+      width: 55%;
+    }
+    @include media($screen-tab) {
+      width: 50%;
+    }
+    @include media($screen-phone) {
+      width: 100%;
+    }
+  }
+  .CartContainer {
+    width: 40%;
+    @include transition;
+    @include media($screen-pc) {
+      width: 42%;
+    }
+    @include media($screen-tab) {
+      width: 48%;
+    }
+    @include media($screen-phone) {
+      width: 100%;
+    }
+  }
+}
