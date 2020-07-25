@@ -1,0 +1,31 @@
+// Color Themes
+$theme-text-color: rgb(119, 119, 119);
+$theme-border-color: rgb(187, 187, 187);
+$theme-highlight-color: rgb(255, 115, 0);
+$theme-white-color: rgb(230, 230, 230);
+
+//Media Query sizes
+$screen-pc: 1024px;
+$screen-phone: 425px;
+$screen-tab: 768px;
+
+// Media Queries
+@mixin media($size) {
+  @if $size == $screen-pc {
+    @media (max-width: $screen-pc) {
+      @content;
+    }
+  } @else if $bp == $screen-tab {
+    @media (max-width: $screen-tab) {
+      @content;
+    }
+  } @else if $bp == $screen-phone {
+    @media (max-width: $screen-phone) {
+      @content;
+    }
+  }
+}
+
+@mixin transition {
+  transition: all 325ms ease-out;
+}
