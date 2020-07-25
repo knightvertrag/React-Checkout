@@ -15,11 +15,11 @@ $screen-tab: 768px;
     @media (max-width: $screen-pc) {
       @content;
     }
-  } @else if $bp == $screen-tab {
+  } @else if $size == $screen-tab {
     @media (max-width: $screen-tab) {
       @content;
     }
-  } @else if $bp == $screen-phone {
+  } @else if $size == $screen-phone {
     @media (max-width: $screen-phone) {
       @content;
     }
