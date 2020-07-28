@@ -16,7 +16,16 @@ const Form = () => {
   return (
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
       <h3>Contact Information</h3>
-      <div className={classes.formGroup}></div>
+      <div className={classes.formGroup}>
+        <label htmlFor="email">E-mail</label>
+        <div
+          className={`${classes.inputContainer} ${
+            errors.email ? classes.inputContainerError : ""
+          }`}
+        >
+          <i className="material-icons">email</i>
+        </div>
+      </div>
     </form>
   );
 };
