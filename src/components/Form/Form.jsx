@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import validator from "validator";
 
-import Modal from "../Utilities/Modal/Modal";
 import classes from "./Form.module.scss";
+
+import Modal from "../UI/Modal/Modal";
 
 const Form = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -14,13 +15,14 @@ const Form = () => {
     setOpenModal(true);
   };
   return (
-    <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-      <h3>Contact Information</h3>
-      <div className={classes.f}>
+    <form className={classes.Form} onSubmit={handleSubmit(onSubmit)}>
+      <h3>Contact information</h3>
+
+      <div className={classes.FormGroup}>
         <label htmlFor="email">E-mail</label>
         <div
-          className={`${classes.inputContainer} ${
-            errors.email ? classes.inputContainerError : ""
+          className={`${classes.InputContainer} ${
+            errors.email ? classes.InputContainerError : ""
           }`}
         >
           <i className="material-icons">email</i>
@@ -34,14 +36,14 @@ const Form = () => {
             })}
           />
         </div>
-        <span className={classes.error}>{errors?.email?.message}</span>
+        <span className={classes.Error}> {errors?.email?.message} </span>
       </div>
 
-      <div className={classes.f}>
+      <div className={classes.FormGroup}>
         <label htmlFor="phone">Phone</label>
         <div
-          className={`${classes.inputContainer} ${
-            errors.phone && classes.inputContainerError
+          className={`${classes.InputContainer} ${
+            errors.phone && classes.InputContainerError
           }`}
         >
           <i className="material-icons">phone</i>
@@ -62,16 +64,16 @@ const Form = () => {
             })}
           />
         </div>
-        <span className={classes.error}> {errors?.phone?.message} </span>
+        <span className={classes.Error}> {errors?.phone?.message} </span>
       </div>
 
       <h3 className={classes.ShippingHeading}>Shipping address</h3>
 
-      <div className={classes.formGroup}>
+      <div className={classes.FormGroup}>
         <label htmlFor="fullName">Full name</label>
         <div
-          className={`${classes.inputContainer} ${
-            errors.fullName && classes.inputContainerError
+          className={`${classes.InputContainer} ${
+            errors.fullName && classes.InputContainerError
           }`}
         >
           <i className="material-icons">account_circle</i>
@@ -89,14 +91,14 @@ const Form = () => {
             })}
           />
         </div>
-        <span className={classes.error}> {errors?.fullName?.message}</span>
+        <span className={classes.Error}> {errors?.fullName?.message}</span>
       </div>
 
-      <div className={classes.formGroup}>
+      <div className={classes.FormGroup}>
         <label htmlFor="address">Address</label>
         <div
-          className={`${classes.inputContainer} ${
-            errors.address && classes.inputContainerError
+          className={`${classes.InputContainer} ${
+            errors.address && classes.InputContainerError
           }`}
         >
           <i className="material-icons">house</i>
@@ -114,14 +116,14 @@ const Form = () => {
             })}
           />
         </div>
-        <span className={classes.error}> {errors?.address?.message}</span>
+        <span className={classes.Error}> {errors?.address?.message}</span>
       </div>
 
-      <div className={classes.formGroup}>
+      <div className={classes.FormGroup}>
         <label htmlFor="city">City</label>
         <div
-          className={`${classes.inputContainer} ${
-            errors.city && classes.inputContainerError
+          className={`${classes.InputContainer} ${
+            errors.city && classes.InputContainerError
           }`}
         >
           <i className="material-icons">location_city</i>
@@ -139,19 +141,19 @@ const Form = () => {
             })}
           />
         </div>
-        <span className={classes.error}> {errors?.city?.message}</span>
+        <span className={classes.Error}> {errors?.city?.message}</span>
       </div>
 
-      <div className={classes.twoFormGroups}>
-        <div className={classes.formGroup}>
+      <div className={classes.TwoFormGroups}>
+        <div className={classes.FormGroup}>
           <label htmlFor="country">Country</label>
           <div
-            className={`${classes.inputContainer} ${
-              errors.country && classes.inputContainerError
+            className={`${classes.InputContainer} ${
+              errors.country && classes.InputContainerError
             }`}
           >
             <i className="material-icons">public</i>
-            <span className={classes.selectDropdown}>
+            <span className={classes.SelectDropdown}>
               <i className="material-icons" id="dropdown">
                 expand_more
               </i>
@@ -172,13 +174,13 @@ const Form = () => {
               <option value="Canada">Canada</option>
             </select>
           </div>
-          <span className={classes.error}>{errors?.country?.message}</span>
+          <span className={classes.Error}>{errors?.country?.message}</span>
         </div>
-        <div className={classes.formGroup}>
+        <div className={classes.FormGroup}>
           <label htmlFor="postalCode">Postal Code</label>
           <div
-            className={`${classes.inputContainer} ${
-              errors.postalCode && classes.inputContainerError
+            className={`${classes.InputContainer} ${
+              errors.postalCode && classes.InputContainerError
             }`}
           >
             <i className="material-icons">markunread_mailbox</i>
@@ -198,12 +200,12 @@ const Form = () => {
               })}
             />
           </div>
-          <span className={classes.error}> {errors?.postalCode?.message} </span>
+          <span className={classes.Error}> {errors?.postalCode?.message} </span>
         </div>
       </div>
-      <div className={classes.formGroup + " " + classes.checkBox}>
+      <div className={classes.FormGroup + " " + classes.CheckBox}>
         <input type="checkbox" name="save" id="postalCode" ref={register} />
-        <span className={classes.customCheckbox}></span>
+        <span className={classes.CustomCheckbox}></span>
         <label htmlFor="save">Save this information for next</label>
       </div>
       <footer>
