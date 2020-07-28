@@ -4,7 +4,7 @@ import validator from "validator";
 
 import classes from "./Form.module.scss";
 
-import Modal from "../UI/Modal/Modal";
+import Modal from "../Utilities/Modal/Modal";
 
 const Form = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -59,7 +59,7 @@ const Form = () => {
               minLength: { value: 10, message: "Contact number too short." },
               maxLength: { value: 13, message: "Your number is too long." },
               validate: (phone) =>
-                validator.isMobilePhone(phone, "en-ZA") ||
+                validator.isMobilePhone(phone, "en-IN") ||
                 "Enter a valid contact number",
             })}
           />
@@ -169,7 +169,7 @@ const Form = () => {
               })}
             >
               <option value="">Your country ..</option>
-              <option value="South Africa">South Africa</option>
+              <option value="India">India</option>
               <option value="United Kingdom">United Kingdom</option>
               <option value="Canada">Canada</option>
             </select>
