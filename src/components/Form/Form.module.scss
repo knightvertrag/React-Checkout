@@ -1,0 +1,184 @@
+@import "../../assets/styles/variables.scss";
+
+.Form {
+  width: 100%;
+  color: $theme-text-color;
+  h3 {
+    margin: 0 0 5px 0;
+    &.ShippingHeading {
+      padding-top: 20px;
+    }
+  }
+  .FormGroup {
+    margin: 10px auto 0;
+    label {
+      display: block;
+      width: 100%;
+      margin: 0 0 6px 5px;
+      font-size: 0.9em;
+    }
+    .InputContainer {
+      position: relative;
+      border-radius: 10px;
+      border: 1px solid $theme-border-color;
+      &.InputContainerError {
+        border: 1px solid $theme-highlight-color;
+      }
+      i {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        font-size: 1.4em;
+        @include media($mobile) {
+          left: 8px;
+          font-size: 1.3em;
+        }
+      }
+      input:not([type="checkbox"]),
+      select {
+        width: 100%;
+        padding: 16px 18px 16px 50px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit;
+        @include media($mobile) {
+          padding-left: 40px;
+        }
+      }
+    }
+    .Error {
+      height: 20px;
+      display: flex;
+      padding-right: 10px;
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-size: 0.9em;
+      color: $theme-highlight-color;
+    }
+  }
+  .TwoFormGroups {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    .FormGroup {
+      width: 48%;
+      margin: 0;
+      .InputContainer {
+        position: relative;
+        .SelectDropdown {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: -1;
+          background: rgb(207, 207, 207);
+          border-radius: 3px;
+          i {
+            position: relative !important;
+            font-size: 1.5em;
+            left: 0;
+            top: 12px;
+            @include media($mobile) {
+              top: 9px;
+              font-size: 1.3em;
+            }
+          }
+        }
+        select {
+          color: $theme-text-color;
+          background: transparent;
+          -webkit-appearance: none;
+          -moz-appearance: none; /* Firefox */
+          -webkit-appearance: none; /* Safari and Chrome */
+          overflow-x: hidden;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .CheckBox {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    input[type="checkbox"] {
+      cursor: pointer;
+      position: absolute;
+      opacity: 0;
+      &:checked {
+        & + .CustomCheckbox {
+          background: $theme-border-color;
+          &:after {
+            -webkit-transform: rotate(45deg) scale(1);
+            -ms-transform: rotate(45deg) scale(1);
+            transform: rotate(45deg) scale(1);
+            opacity: 1;
+            left: 8px;
+            top: 2px;
+            width: 6px;
+            height: 12px;
+            border-color: #000;
+            border-width: 0 2px 2px 0;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+    .CustomCheckbox {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 24px;
+      width: 24px;
+      background-color: transparent;
+      border: 1px solid $theme-border-color;
+      border-radius: 5px;
+      z-index: -1;
+      cursor: pointer;
+      &:after {
+        position: absolute;
+        content: "";
+        left: 12px;
+        top: 12px;
+        height: 0px;
+        width: 0px;
+        border-radius: 5px;
+        border: solid $theme-border-color;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(0deg) scale(0);
+        -ms-transform: rotate(0deg) scale(0);
+        transform: rotate() scale(0);
+        opacity: 0;
+      }
+      input[type="checkbox"]:checked ~ & {
+        background-color: $theme-border-color;
+      }
+    }
+    label {
+      display: inline;
+      margin: 0 0 0 30px;
+    }
+  }
+  footer {
+    text-align: right;
+    input[type="submit"] {
+      padding: 10px 30px;
+      letter-spacing: 1px;
+      font-size: 1.05em;
+      border-radius: 5px;
+      border: none;
+      color: $theme-white-color;
+      background: $theme-highlight-color;
+      cursor: pointer;
+    }
+  }
+}
