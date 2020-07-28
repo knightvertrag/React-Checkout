@@ -26,7 +26,7 @@
       width: 100%;
     }
   }
-  .CartContainer {
+  .cartContainer {
     width: 40%;
     @include transition;
     @include media($screen-pc) {
