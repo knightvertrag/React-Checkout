@@ -10,7 +10,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.0.8",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "validator": "^13.1.1",
     "vercel": "^19.2.0"
   },
